@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AgentSetup</fullName>
+    <label>Agent Setup</label>
+    <description>Grants the "Use Setup with Agentforce" system permission, allowing assigned users to use Setup with Agentforce.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>UseSetupWithAgentforce</name>
+    </userPermissions>
+</PermissionSet>
