@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Wait_Minutes__c</fullName><label>Expected Wait Minutes</label>
+    <type>Number</type><precision>7</precision><scale>1</scale><required>false</required>
+</CustomField>

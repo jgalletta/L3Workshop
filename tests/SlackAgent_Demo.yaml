@@ -1,0 +1,21 @@
+name: SlackAgent_Demo
+subjectType: AGENT
+subjectName: SlackAgent
+
+testCases:
+  # 1) Headline capability: retrieve a Case by number and report its details.
+  - utterance: "Can you look up case 00001074?"
+    expectedTopic: case_lookup
+    expectedActions:
+      - get_case
+    expectedOutcome: "Agent retrieves the case and reports its details, such as the subject, status, and priority."
+
+  # 2) Guardrail: off-topic request should be politely declined and redirected.
+  #    expectedTopic intentionally omitted for guardrail cases (avoids false topic-assertion failures).
+  - utterance: "What's the weather in Paris today?"
+    expectedOutcome: "Agent politely declines the off-topic request and redirects the user to case or support related help."
+
+  # 3) Routing: request for a human should route to the escalation subagent.
+  - utterance: "I want to talk to a human agent."
+    expectedTopic: escalation
+    expectedOutcome: "Agent moves to escalate the conversation to a live human agent."

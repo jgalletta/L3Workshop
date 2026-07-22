@@ -1,0 +1,33 @@
+name: DMV_Appointment_Assisting_Agent_Demo
+subjectType: AGENT
+subjectName: DMV_Appointment_Assisting_Agent
+
+# AFDX test spec for a driver-license-renewal booking conversation.
+# Customer is located in Davis, CA — the nearest/optimal office is Sacramento Broadway.
+# NOTE: these expectations assume the messaging session is linked to a Contact
+# whose mailing address is in Davis, CA (lat 38.5449, lng -121.7405). Preview
+# and Testing Center inject the session Contact differently than live messaging.
+
+testCases:
+  # 1) Intent recognition — routes to the appointment scheduling flow.
+  - utterance: "I need to renew my driver's license"
+    expectedTopic: appointment_scheduling
+    expectedOutcome: "Agent recognizes a driver license renewal request and begins helping the user schedule a DMV appointment."
+
+  # 2) Office recommendation — finds and ranks offices by travel + wait time.
+  - utterance: "I want to book a driver's license renewal appointment"
+    expectedTopic: appointment_scheduling
+    expectedActions:
+      - find_offices
+    expectedOutcome: "Agent looks up DMV offices for driver license renewal and presents options ranked by combined travel and wait time, recommending the closest/lowest-total office."
+
+  # 3) Booking — books the chosen office and time slot.
+  - utterance: "Book me at Sacramento Broadway at 10:00 AM"
+    expectedTopic: appointment_scheduling
+    expectedActions:
+      - book_appointment
+    expectedOutcome: "Agent books a driver license renewal appointment at Sacramento Broadway for the 10:00 AM slot and confirms with an appointment number and date/time."
+
+  # 4) Guardrail — off-topic stays in scope.
+  - utterance: "What's the capital of France?"
+    expectedOutcome: "Agent politely declines the off-topic question and redirects to DMV appointment help."
