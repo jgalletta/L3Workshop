@@ -7,6 +7,10 @@
         <enabled>true</enabled>
         <externalCredentialPrincipal>DMV_Maps-DMV_Maps_Principal</externalCredentialPrincipal>
     </externalCredentialPrincipalAccesses>
+    <externalCredentialPrincipalAccesses>
+        <enabled>true</enabled>
+        <externalCredentialPrincipal>L3_DocAI-L3_DocAI_Principal</externalCredentialPrincipal>
+    </externalCredentialPrincipalAccesses>
     <classAccesses>
         <apexClass>DLCreateApplication</apexClass>
         <enabled>true</enabled>
