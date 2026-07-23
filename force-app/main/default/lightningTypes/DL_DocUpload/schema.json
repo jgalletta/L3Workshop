@@ -1,0 +1,5 @@
+{
+  "title": "DL Doc Upload",
+  "description": "Renders an in-conversation two-file upload widget for the UploadWidget payload returned by the DLDocumentRequest Apex action.",
+  "lightning:type": "@apexClassType/c__DLDocumentRequest$UploadWidget"
+}

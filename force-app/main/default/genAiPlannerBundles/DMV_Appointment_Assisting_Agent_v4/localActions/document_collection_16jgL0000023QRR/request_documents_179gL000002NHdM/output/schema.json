@@ -1,0 +1,14 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "uploadWidget" : {
+      "title" : "Upload Widget",
+      "description" : "Payload rendered by the DL_DocUpload custom Lightning type.",
+      "lightning:type" : "@apexClassType/c__DLDocumentRequest$UploadWidget",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

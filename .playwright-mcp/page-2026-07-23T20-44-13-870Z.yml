@@ -1,0 +1,167 @@
+- generic [ref=f53e3]:
+  - link "Skip to main content" [ref=f53e4] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=f53e6]:
+    - generic [ref=f53e7]: An official demonstration portal · State Services
+    - generic [ref=f53e8]:
+      - generic [ref=f53e9]: Translate
+      - generic [ref=f53e10]: Locations
+      - generic [ref=f53e11]: Help
+  - banner [ref=f53e12]:
+    - generic [ref=f53e13]:
+      - link "Department of Motor Vehicles logo Department of Motor Vehicles Online Services" [ref=f53e14] [cursor=pointer]:
+        - /url: /dmv
+        - img "Department of Motor Vehicles logo" [ref=f53e15]
+        - generic [ref=f53e25]:
+          - generic [ref=f53e26]: Department of Motor Vehicles
+          - generic [ref=f53e27]: Online Services
+      - navigation [ref=f53e28]:
+        - link "Home" [ref=f53e29] [cursor=pointer]:
+          - /url: /dmv
+        - link "Apply for License" [ref=f53e30] [cursor=pointer]:
+          - /url: /dmv/renew
+        - link "Ask DMV" [ref=f53e31] [cursor=pointer]:
+          - /url: /dmv/assistant
+        - link "Book Appointment" [ref=f53e32] [cursor=pointer]:
+          - /url: /dmv/appointment
+        - link "Appointments" [ref=f53e33] [cursor=pointer]:
+          - /url: /dmv/appointments
+        - generic [ref=f53e34]: Jay Walker
+  - main [ref=f53e41]:
+    - generic [ref=f53e42]:
+      - generic [ref=f53e43]:
+        - generic [ref=f53e44]: Driver's License & ID
+        - heading "Apply for a New License" [level=1] [ref=f53e49]
+        - paragraph [ref=f53e50]: Chat with the DMV Assistant to complete your application. It will guide you step by step and let you know what to bring.
+      - generic [ref=f53e51]:
+        - generic [ref=f53e53]:
+          - generic [ref=f53e54]:
+            - generic [ref=f53e60]:
+              - paragraph [ref=f53e61]: DMV Assistant
+              - paragraph [ref=f53e62]: Powered by Agentforce
+            - generic [ref=f53e63]: Online
+          - iframe [active] [ref=f53e170]:
+            - generic [ref=f56e18]:
+              - banner [ref=f56e20]:
+                - button "Open the chat menu" [active] [ref=f56e182]
+                - heading "Drivers License Agent" [level=2] [ref=f56e30]
+                - button "Minimize the chat window" [ref=f56e31]
+              - generic [ref=f56e39]:
+                - region "Chat Window" [ref=f56e41]:
+                  - generic [ref=f56e42]: Today • 1:40 PM
+                  - generic [ref=f56e48]:
+                    - generic "Drivers License Agent" [ref=f56e51]: DL
+                    - generic [ref=f56e53]:
+                      - text: Drivers License Agent joined •
+                      - generic [ref=f56e54]: 1:40 PM
+                  - generic [ref=f56e56]:
+                    - generic "Drivers License Agent" [ref=f56e59]: DL
+                    - generic [ref=f56e60]:
+                      - paragraph [ref=f56e65]: Hi, I'm an AI assistant. How can I help you?
+                      - generic [ref=f56e67]:
+                        - text: Drivers License Agent •
+                        - generic [ref=f56e68]: 1:40 PM
+                  - generic [ref=f56e88]:
+                    - paragraph [ref=f56e93]: register for a drivers license
+                    - generic [ref=f56e94]: Sent • 1:40 PM
+                  - generic [ref=f56e97]:
+                    - generic "Drivers License Agent" [ref=f56e100]: DL
+                    - generic [ref=f56e101]:
+                      - generic [ref=f56e105]:
+                        - paragraph [ref=f56e106]: "To register for a driver's license, I need to verify your identity and address. Please attach:"
+                        - list [ref=f56e107]:
+                          - listitem [ref=f56e108]: A form of identification (such as a passport or national ID) as a PNG file.
+                          - listitem [ref=f56e109]: Proof of address (such as a utility bill or bank statement) as a PNG file.
+                        - paragraph [ref=f56e110]: Once both documents are attached, let me know so I can proceed. Do you have both documents ready to upload?
+                      - generic [ref=f56e112]:
+                        - text: Drivers License Agent •
+                        - generic [ref=f56e113]: 1:40 PM
+                  - generic [ref=f56e116]:
+                    - paragraph [ref=f56e121]: done, uploaded both
+                    - generic [ref=f56e122]: Sent • 1:40 PM
+                  - generic [ref=f56e139]:
+                    - generic "Drivers License Agent" [ref=f56e142]: DL
+                    - generic [ref=f56e143]:
+                      - paragraph [ref=f56e148]: The details could not be read from your documents this time, but you can still continue. Please reply "confirmed" to proceed to booking your appointment for your driver's license registration.
+                      - generic [ref=f56e150]:
+                        - text: Drivers License Agent •
+                        - generic [ref=f56e151]: 1:40 PM
+                  - generic [ref=f56e154]:
+                    - paragraph [ref=f56e159]: confirmed
+                    - generic [ref=f56e160]: Sent • 1:41 PM
+                  - generic [ref=f56e163]:
+                    - generic "Drivers License Agent" [ref=f56e166]: DL
+                    - generic [ref=f56e167]:
+                      - paragraph [ref=f56e172]: You can now book your DMV appointment by clicking the "Book Appointment" button below. If you have any other questions, let me know!
+                      - generic [ref=f56e174]:
+                        - text: Drivers License Agent •
+                        - generic [ref=f56e175]: 1:41 PM
+                  - paragraph [ref=f56e184]: Chat ended at 1:44 PM
+                - textbox "Type your message..." [disabled] [ref=f56e81]
+              - generic:
+                - alert [ref=f56e82]
+                - alert [ref=f56e84]
+        - complementary [ref=f53e70]:
+          - generic [ref=f53e71]:
+            - paragraph [ref=f53e72]: upload build v8 (classic-prefix)
+            - heading "Upload your documents" [level=2] [ref=f53e73]
+            - paragraph [ref=f53e77]: Choose your identification and proof of address, then submit. After that, tell the assistant you're done and it will confirm your details.
+            - generic [ref=f53e78]:
+              - generic [ref=f53e80]:
+                - generic [ref=f53e81]:
+                  - paragraph [ref=f53e82]: Form of Identification
+                  - paragraph [ref=f53e83]: Passport, state ID, or driver license.
+                - button "Choose" [ref=f53e84]
+              - generic [ref=f53e89]:
+                - generic [ref=f53e90]:
+                  - paragraph [ref=f53e91]: Proof of Address
+                  - paragraph [ref=f53e92]: Utility bill, bank statement, or lease.
+                - button "Choose" [ref=f53e93]
+            - button "Submit documents" [disabled] [ref=f53e97]
+            - button "run connection diagnostic" [ref=f53e101]
+          - generic [ref=f53e102]:
+            - heading "What you'll need" [level=2] [ref=f53e103]
+            - list [ref=f53e107]:
+              - listitem [ref=f53e108]:
+                - generic [ref=f53e111]:
+                  - paragraph [ref=f53e112]: Proof of identity
+                  - paragraph [ref=f53e113]: U.S. passport, birth certificate, or permanent resident card.
+              - listitem [ref=f53e114]:
+                - generic [ref=f53e117]:
+                  - paragraph [ref=f53e118]: Proof of residency
+                  - paragraph [ref=f53e119]: Utility bill, rental agreement, or bank statement.
+              - listitem [ref=f53e120]:
+                - generic [ref=f53e123]:
+                  - paragraph [ref=f53e124]: Application fee
+                  - paragraph [ref=f53e125]: Paid online at the end of your application.
+          - generic [ref=f53e126]:
+            - heading "Your application" [level=2] [ref=f53e127]
+            - generic [ref=f53e131]:
+              - generic [ref=f53e132]:
+                - term [ref=f53e133]: Status
+                - definition [ref=f53e134]: Draft
+              - generic [ref=f53e135]:
+                - term [ref=f53e136]: License class
+                - definition [ref=f53e137]: —
+              - generic [ref=f53e138]:
+                - term [ref=f53e139]: REAL ID
+                - definition [ref=f53e140]: —
+              - generic [ref=f53e141]:
+                - term [ref=f53e142]: Started
+                - definition [ref=f53e143]: Just now
+            - paragraph [ref=f53e144]: Your progress updates automatically as you chat with the assistant.
+  - contentinfo [ref=f53e145]:
+    - generic [ref=f53e147]:
+      - generic [ref=f53e148]:
+        - img "Department of Motor Vehicles logo" [ref=f53e149]
+        - generic [ref=f53e159]: Department of Motor Vehicles
+      - paragraph [ref=f53e160]: The Department of Motor Vehicles serves residents with driver licensing, identification, and vehicle services. This portal is a demonstration built on the Salesforce platform.
+      - navigation [ref=f53e161]:
+        - generic [ref=f53e162]: Home
+        - generic [ref=f53e163]: Renew DL/ID
+        - generic [ref=f53e164]: REAL ID
+        - generic [ref=f53e165]: Appointments
+        - generic [ref=f53e166]: Privacy
+        - generic [ref=f53e167]: Accessibility
+        - generic [ref=f53e168]: Contact us
+      - paragraph [ref=f53e169]: © 2026 Department of Motor Vehicles (demonstration)

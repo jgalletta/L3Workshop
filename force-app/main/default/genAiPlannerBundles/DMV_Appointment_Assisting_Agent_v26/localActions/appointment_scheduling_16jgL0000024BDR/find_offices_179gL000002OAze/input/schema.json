@@ -1,0 +1,21 @@
+{
+  "required" : [ "applicationId", "serviceType" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "applicationId" : {
+      "title" : "Application Id",
+      "description" : "Id of the application requesting the appointment.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "serviceType" : {
+      "title" : "Service Type",
+      "description" : "The DMV service type the user needs.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

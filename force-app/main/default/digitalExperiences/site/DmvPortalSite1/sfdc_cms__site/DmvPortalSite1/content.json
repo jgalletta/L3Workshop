@@ -1,0 +1,10 @@
+{
+  "type" : "sfdc_cms__site",
+  "title" : "DmvPortalSite",
+  "contentBody" : {
+    "authenticationType" : "AUTHENTICATED",
+    "appContainer" : true,
+    "appSpace" : "c__DmvPortal"
+  },
+  "urlName" : "dmv"
+}

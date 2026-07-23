@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Helps users renew or obtain a driver license: collects identity and proof-of-address documents, confirms extracted personal details, and books an optimized DMV appointment.</description>
+    <localTopicLinks>
+        <genAiPluginName>agent_router_16jgL0000023clx</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>ambiguous_question_16jgL0000023clx</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>appointment_scheduling_16jgL0000023clx</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>document_collection_16jgL0000023clx</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>document_processing_16jgL0000023clx</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>escalation_16jgL0000023clx</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>off_topic_16jgL0000023clx</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>off_topic_16jgL0000023clx</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Redirect conversation to relevant topics when user request goes off-topic</description>
+        <developerName>off_topic_16jgL0000023clx</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179gL000002NU9D</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179gL000002NU9D</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>off_topic</localDeveloperName>
+        <masterLabel>Off Topic</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>document_collection_16jgL0000023clx</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Greets the user and collects their form of identification and proof of address using an in-conversation upload widget.</description>
+        <developerName>document_collection_16jgL0000023clx</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179gL000002NU97</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179gL000002NU97</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>create_application_179gL000002NU97</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>create_application_179gL000002NU97</fullName>
+            <description>Creates the Application record that anchors this conversation.</description>
+            <developerName>create_application_179gL000002NU97</developerName>
+            <invocationTarget>DLCreateApplication</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>create_application</localDeveloperName>
+            <masterLabel>Create Application</masterLabel>
+        </localActions>
+        <localDeveloperName>document_collection</localDeveloperName>
+        <masterLabel>Document Collection</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>escalation_16jgL0000023clx</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handles requests from users who want to transfer or escalate their conversation to a live human agent.</description>
+        <developerName>escalation_16jgL0000023clx</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179gL000002NU9A</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179gL000002NU9A</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>escalation</localDeveloperName>
+        <masterLabel>Escalation</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>appointment_scheduling_16jgL0000023clx</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Helps the user schedule a DMV appointment for a service type, recommending the office with the least combined travel and wait time, then booking the chosen slot.</description>
+        <developerName>appointment_scheduling_16jgL0000023clx</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179gL000002NU9B</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179gL000002NU9B</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>find_offices_179gL000002NU9B</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>book_appointment_179gL000002NU9B</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>book_appointment_179gL000002NU9B</fullName>
+            <description>Creates a DMV appointment record at the chosen office and time slot.</description>
+            <developerName>book_appointment_179gL000002NU9B</developerName>
+            <invocationTarget>BookDMVAppointment</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>book_appointment</localDeveloperName>
+            <masterLabel>Book Appointment</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>find_offices_179gL000002NU9B</fullName>
+            <description>Ranks appointment-eligible DMV offices for a service type by combined travel and wait time.</description>
+            <developerName>find_offices_179gL000002NU9B</developerName>
+            <invocationTarget>FindOptimalDMVOffices</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>find_offices</localDeveloperName>
+            <masterLabel>Find Offices</masterLabel>
+        </localActions>
+        <localDeveloperName>appointment_scheduling</localDeveloperName>
+        <masterLabel>Appointment Scheduling</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>ambiguous_question_16jgL0000023clx</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Redirect conversation to relevant topics when user request is too ambiguous</description>
+        <developerName>ambiguous_question_16jgL0000023clx</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179gL000002NU9C</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179gL000002NU9C</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>ambiguous_question</localDeveloperName>
+        <masterLabel>Ambiguous Question</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>document_processing_16jgL0000023clx</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Interprets the uploaded documents, extracts the user&apos;s personal details, updates their contact record, and asks the user to confirm the details.</description>
+        <developerName>document_processing_16jgL0000023clx</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179gL000002NU98</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179gL000002NU98</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>extract_and_update_application_179gL000002NU98</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>extract_and_update_application_179gL000002NU98</fullName>
+            <description>Links the uploaded messaging documents to the application, runs Document AI, geocodes the address, and updates the application.</description>
+            <developerName>extract_and_update_application_179gL000002NU98</developerName>
+            <invocationTarget>DLProcessApplicationDocuments</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>extract_and_update_application</localDeveloperName>
+            <masterLabel>Extract And Update Application</masterLabel>
+        </localActions>
+        <localDeveloperName>document_processing</localDeveloperName>
+        <masterLabel>Document Processing</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>agent_router_16jgL0000023clx</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Welcome the user and determine the appropriate subagent based on user input</description>
+        <developerName>agent_router_16jgL0000023clx</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.
+
+{{state.AgentScriptInternal_agent_instructions}}</description>
+            <developerName>instruction0_179gL000002NU99</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179gL000002NU99</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>agent_router</localDeveloperName>
+        <masterLabel>Agent Router</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <masterLabel>Drivers License Agent</masterLabel>
+    <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+</GenAiPlannerBundle>

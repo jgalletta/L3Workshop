@@ -1,0 +1,5 @@
+{
+  "title": "DL Appointment Link",
+  "description": "Renders a single Book Appointment button for the LinkWidget payload returned by the DLAppointmentLink Apex action.",
+  "lightning:type": "@apexClassType/c__DLAppointmentLink$LinkWidget"
+}

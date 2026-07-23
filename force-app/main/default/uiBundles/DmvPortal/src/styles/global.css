@@ -1,0 +1,181 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * DMV (Department of Motor Vehicles) design system.
+ *
+ * Palette: California DMV / CA.gov design language — deep institutional navy +
+ * signature state gold — for government trust and legibility.
+ * Polish: Zen Browser principles — large radii, soft diffuse "glow" shadows,
+ * glassmorphism, generous whitespace, restrained accent use. Calm, immaculate.
+ *
+ * DMV tokens are mapped onto shadcn's semantic CSS variables so every shadcn
+ * primitive (Button, Card, Badge, Tabs, Dialog…) inherits the DMV identity.
+ * Raw brand tokens are usable directly: bg-dmv-navy, text-dmv-gold, etc.
+ */
+@theme inline {
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  /* shadcn semantic tokens → DMV palette */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Zen-style roundedness — softer than institutional 4px */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+
+  /* ---- Raw DMV brand tokens ---- */
+  /* Navy family (headers, primary text, chrome) */
+  --color-dmv-navy: #0a3161;         /* deep CA navy */
+  --color-dmv-navy-90: #123f78;
+  --color-dmv-navy-80: #1c5390;
+  --color-dmv-blue: #046b99;         /* CA interactive blue */
+  --color-dmv-blue-70: #2a86b8;
+  --color-dmv-blue-20: #dcecf5;
+  --color-dmv-blue-10: #eff6fb;
+  --color-dmv-sky: #f2f8fc;          /* faint blue wash */
+
+  /* Gold family (signature accent — use sparingly) */
+  --color-dmv-gold: #fdb81e;
+  --color-dmv-gold-70: #e0a413;
+  --color-dmv-gold-20: #fdeec2;
+  --color-dmv-gold-10: #fff8e8;
+
+  /* Neutrals (cool-tinted grays) */
+  --color-dmv-ink: #1b2733;          /* body text */
+  --color-dmv-slate: #4a5a6a;        /* secondary text */
+  --color-dmv-mist: #7a8899;         /* tertiary / icons */
+  --color-dmv-line: #e3e9f0;         /* hairline borders */
+  --color-dmv-surface: #ffffff;      /* card surface */
+  --color-dmv-canvas: #f5f8fb;       /* page canvas */
+
+  /* Status */
+  --color-dmv-success: #1f7a4d;
+  --color-dmv-success-bg: #eafaf1;
+  --color-dmv-warning: #b7791f;
+  --color-dmv-warning-bg: #fdf6e3;
+  --color-dmv-danger: #c0392b;
+  --color-dmv-danger-bg: #fdecea;
+  --color-dmv-info: #046b99;
+  --color-dmv-info-bg: #eff6fb;
+
+  /* ---- Legacy bc-* aliases → DMV values (keeps any leftover refs compiling) ---- */
+  --color-bc-blue: var(--color-dmv-navy);
+  --color-bc-blue-90: var(--color-dmv-navy-90);
+  --color-bc-blue-80: var(--color-dmv-navy-80);
+  --color-bc-blue-10: var(--color-dmv-blue-10);
+  --color-bc-gold: var(--color-dmv-gold);
+  --color-bc-gold-10: var(--color-dmv-gold-10);
+  --color-bc-gray-10: var(--color-dmv-canvas);
+  --color-bc-gray-20: #eef2f6;
+  --color-bc-gray-30: var(--color-dmv-line);
+  --color-bc-gray-70: var(--color-dmv-mist);
+  --color-bc-gray-90: var(--color-dmv-slate);
+
+  /* ---- Zen-style soft, diffuse shadows (glow, not hard drop) ---- */
+  --shadow-dmv-xs: 0 1px 2px rgba(10, 49, 97, 0.04), 0 1px 3px rgba(10, 49, 97, 0.06);
+  --shadow-dmv-sm: 0 2px 8px rgba(10, 49, 97, 0.06), 0 1px 2px rgba(10, 49, 97, 0.04);
+  --shadow-dmv: 0 6px 24px rgba(10, 49, 97, 0.08), 0 2px 6px rgba(10, 49, 97, 0.05);
+  --shadow-dmv-lg: 0 18px 48px rgba(10, 49, 97, 0.12), 0 6px 16px rgba(10, 49, 97, 0.08);
+  --shadow-dmv-glow: 0 0 0 1px rgba(4, 107, 153, 0.08), 0 12px 40px rgba(4, 107, 153, 0.12);
+}
+
+/*
+ * shadcn semantic variables resolved to DMV colours.
+ * 12px base radius (zen roundedness) vs. shadcn's default 10px / BC's 4px.
+ */
+:root {
+  --radius: 12px;
+  --background: #f5f8fb;
+  --foreground: #1b2733;
+  --card: #ffffff;
+  --card-foreground: #1b2733;
+  --popover: #ffffff;
+  --popover-foreground: #1b2733;
+  --primary: #046b99;
+  --primary-foreground: #ffffff;
+  --secondary: #eef3f8;
+  --secondary-foreground: #0a3161;
+  --muted: #f5f8fb;
+  --muted-foreground: #4a5a6a;
+  --accent: #eff6fb;
+  --accent-foreground: #0a3161;
+  --destructive: #c0392b;
+  --destructive-foreground: #ffffff;
+  --border: #e3e9f0;
+  --input: #e3e9f0;
+  --ring: #046b99;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    @apply min-h-screen;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased text-foreground;
+    font-family: var(--font-sans);
+    background-color: var(--color-dmv-canvas);
+    /* subtle top-of-page tonal wash for depth (zen calm) */
+    background-image: radial-gradient(
+      1200px 480px at 50% -10%,
+      rgba(4, 107, 153, 0.06),
+      transparent 70%
+    );
+    background-attachment: fixed;
+  }
+
+  /* Visible 2px focus ring on all interactive elements (WCAG 2.1 AA). */
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    color: var(--color-dmv-navy);
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism surface — translucent + blur, zen signature */
+  .glass {
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+  }
+  .glass-navy {
+    background-color: rgba(10, 49, 97, 0.72);
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+  }
+}
