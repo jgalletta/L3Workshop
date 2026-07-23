@@ -1,0 +1,52 @@
+<template>
+    <div class="slds-box slds-box_x-small slds-theme_shade">
+        <p class="slds-text-body_regular slds-m-bottom_small">{instructions}</p>
+
+        <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-1 slds-m-bottom_x-small">
+                <template lwc:if={applicationId}>
+                    <lightning-file-upload
+                        label="Form of Identification (PNG)"
+                        name="idUpload"
+                        accept={acceptedFormats}
+                        record-id={applicationId}
+                        onuploadfinished={handleIdUpload}>
+                    </lightning-file-upload>
+                    <template lwc:if={idUploaded}>
+                        <lightning-icon icon-name="utility:check" size="x-small" variant="success"></lightning-icon>
+                        <span class="slds-text-color_success slds-m-left_xx-small">ID uploaded</span>
+                    </template>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-1 slds-m-bottom_x-small">
+                <template lwc:if={applicationId}>
+                    <lightning-file-upload
+                        label="Proof of Address (PNG)"
+                        name="addressUpload"
+                        accept={acceptedFormats}
+                        record-id={applicationId}
+                        onuploadfinished={handleAddressUpload}>
+                    </lightning-file-upload>
+                    <template lwc:if={addressUploaded}>
+                        <lightning-icon icon-name="utility:check" size="x-small" variant="success"></lightning-icon>
+                        <span class="slds-text-color_success slds-m-left_xx-small">Proof of address uploaded</span>
+                    </template>
+                </template>
+            </div>
+        </div>
+
+        <template lwc:if={bothUploaded}>
+            <div class="slds-m-top_small slds-text-color_success slds-text-body_regular">
+                Both documents received. Let me know you're done and I'll read them.
+            </div>
+        </template>
+
+        <template lwc:if={applicationId}></template>
+        <template lwc:else>
+            <div class="slds-text-color_error">
+                We couldn't identify your application record, so uploads are unavailable right now.
+            </div>
+        </template>
+    </div>
+</template>

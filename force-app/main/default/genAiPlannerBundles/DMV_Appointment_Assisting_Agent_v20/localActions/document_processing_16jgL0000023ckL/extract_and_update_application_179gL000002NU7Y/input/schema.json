@@ -1,0 +1,14 @@
+{
+  "required" : [ "applicationId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "applicationId" : {
+      "title" : "Application Id",
+      "description" : "The application whose documents should be interpreted.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

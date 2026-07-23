@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Grants the DMV Appointment Assisting Agent user access to its Apex actions, the DMV Appointment object, and the DMV wait-times data.</description>
+    <description>Grants the DMV/Drivers License agent user access to its Apex actions, the Application and DMV Appointment objects, the DMV wait-times data, and the maps credential.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>DMV Appointment Agent Access</label>
     <externalCredentialPrincipalAccesses>
         <enabled>true</enabled>
         <externalCredentialPrincipal>DMV_Maps-DMV_Maps_Principal</externalCredentialPrincipal>
     </externalCredentialPrincipalAccesses>
+    <classAccesses>
+        <apexClass>DLCreateApplication</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DLPageUploadController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DLDocumentRequest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DLDocumentProcessor</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DLProcessApplicationDocuments</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>L3_DocAI_ExtractData</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>L3_DocAI_Categorizer</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>FindOptimalDMVOffices</apexClass>
         <enabled>true</enabled>
@@ -15,6 +43,54 @@
         <apexClass>BookDMVAppointment</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.First_Name__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Last_Name__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Birthdate__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Street__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.City__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.State__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Postal_Code__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Latitude__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Longitude__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Service_Type__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Status__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>Application__c.Contact__c</field><readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable><field>DMV_Appointment__c.Application__c</field><readable>true</readable>
+    </fieldPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Application__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
@@ -24,74 +100,4 @@
         <object>DMV_Appointment__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Contact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Appointment_DateTime__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Time_Slot__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Service_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Office_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Office_Name__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Office_City__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Office_Region__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Office_Latitude__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Office_Longitude__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Expected_Wait_Minutes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Congestion_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Estimated_Travel_Minutes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>DMV_Appointment__c.Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
 </PermissionSet>

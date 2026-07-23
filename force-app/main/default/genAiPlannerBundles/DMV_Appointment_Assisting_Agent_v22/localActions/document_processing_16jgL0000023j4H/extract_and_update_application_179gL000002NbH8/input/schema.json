@@ -1,0 +1,21 @@
+{
+  "required" : [ "applicationId", "messagingSessionId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "applicationId" : {
+      "title" : "Application Id",
+      "description" : "The application whose documents should be interpreted.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "messagingSessionId" : {
+      "title" : "Messaging Session Id",
+      "description" : "The messaging session Id whose uploaded documents should be processed.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

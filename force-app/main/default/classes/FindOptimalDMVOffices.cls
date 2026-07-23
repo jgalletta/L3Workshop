@@ -21,11 +21,11 @@ public without sharing class FindOptimalDMVOffices {
 
     public class Request {
         @InvocableVariable(
-            label='Contact Id'
-            description='Id of the Contact requesting the appointment. Mailing latitude/longitude are read from this record.'
+            label='Application Id'
+            description='Id of the Application requesting the appointment. Geocoded latitude/longitude are read from this record.'
             required=true
         )
-        public String contactId;
+        public String applicationId;
         @InvocableVariable(
             label='Service Type'
             description='The DMV service type the user needs, for example Driver License Renewal or Behind-the-Wheel Test.'
@@ -83,19 +83,19 @@ public without sharing class FindOptimalDMVOffices {
         res.offices = new List<OfficeOption>();
         res.found = false;
 
-        // 1. Contact origin (populated upstream from ingested documents).
+        // 1. Application origin (geocoded from the extracted document address).
         Decimal originLat, originLng;
-        for (Contact c : [
-            SELECT MailingLatitude, MailingLongitude, MailingCity
-            FROM Contact
-            WHERE Id = :req.contactId
+        for (Application__c a : [
+            SELECT Latitude__c, Longitude__c, City__c
+            FROM Application__c
+            WHERE Id = :req.applicationId
             LIMIT 1
         ]) {
-            originLat = c.MailingLatitude;
-            originLng = c.MailingLongitude;
+            originLat = a.Latitude__c;
+            originLng = a.Longitude__c;
         }
         if (originLat == null || originLng == null) {
-            res.message = 'We don\'t have your location on file yet, so we can\'t rank offices by travel time. Please make sure your address is on record.';
+            res.message = 'We don\'t have your location yet. Please upload your documents so we can read your address before ranking offices by travel time.';
             return res;
         }
 

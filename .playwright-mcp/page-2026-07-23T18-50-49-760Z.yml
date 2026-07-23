@@ -1,0 +1,107 @@
+- generic [ref=f8e3]:
+  - link "Skip to main content" [ref=f8e4] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=f8e6]:
+    - generic [ref=f8e7]: An official demonstration portal · State Services
+    - generic [ref=f8e8]:
+      - generic [ref=f8e9]: Translate
+      - generic [ref=f8e10]: Locations
+      - generic [ref=f8e11]: Help
+  - banner [ref=f8e12]:
+    - generic [ref=f8e13]:
+      - link "Department of Motor Vehicles logo Department of Motor Vehicles Online Services" [ref=f8e14] [cursor=pointer]:
+        - /url: /dmv
+        - img "Department of Motor Vehicles logo" [ref=f8e15]
+        - generic [ref=f8e25]:
+          - generic [ref=f8e26]: Department of Motor Vehicles
+          - generic [ref=f8e27]: Online Services
+      - navigation [ref=f8e28]:
+        - link "Home" [ref=f8e29] [cursor=pointer]:
+          - /url: /dmv
+        - link "Apply for License" [ref=f8e30] [cursor=pointer]:
+          - /url: /dmv/renew
+        - link "Ask DMV" [ref=f8e31] [cursor=pointer]:
+          - /url: /dmv/assistant
+        - link "Book Appointment" [ref=f8e32] [cursor=pointer]:
+          - /url: /dmv/appointment
+        - generic [ref=f8e33]: Alex Rivera
+  - main [ref=f8e40]:
+    - generic [ref=f8e41]:
+      - generic [ref=f8e42]:
+        - generic [ref=f8e43]: Driver's License & ID
+        - heading "Apply for a New License" [level=1] [ref=f8e48]
+        - paragraph [ref=f8e49]: Chat with the DMV Assistant to complete your application. It will guide you step by step and let you know what to bring.
+      - generic [ref=f8e50]:
+        - generic [ref=f8e52]:
+          - generic [ref=f8e53]:
+            - generic [ref=f8e59]:
+              - paragraph [ref=f8e60]: DMV Assistant
+              - paragraph [ref=f8e61]: Powered by Agentforce
+            - generic [ref=f8e62]: Online
+          - generic [ref=f8e65]:
+            - paragraph [ref=f8e67]: Connecting you to the DMV Assistant…
+            - button "Start conversation" [ref=f8e68]
+        - complementary [ref=f8e69]:
+          - generic [ref=f8e70]:
+            - paragraph [ref=f8e71]: upload build v8 (classic-prefix)
+            - heading "Upload your documents" [level=2] [ref=f8e72]
+            - paragraph [ref=f8e76]: Choose your identification and proof of address, then submit. After that, tell the assistant you're done and it will confirm your details.
+            - generic [ref=f8e77]:
+              - generic [ref=f8e79]:
+                - generic [ref=f8e80]:
+                  - paragraph [ref=f8e81]: Form of Identification
+                  - paragraph [ref=f8e82]: Passport, state ID, or driver license.
+                - button "Choose" [ref=f8e83]
+              - generic [ref=f8e88]:
+                - generic [ref=f8e89]:
+                  - paragraph [ref=f8e90]: Proof of Address
+                  - paragraph [ref=f8e91]: Utility bill, bank statement, or lease.
+                - button "Choose" [ref=f8e92]
+            - button "Submit documents" [disabled] [ref=f8e96]
+            - button "run connection diagnostic" [ref=f8e100]
+          - generic [ref=f8e101]:
+            - heading "What you'll need" [level=2] [ref=f8e102]
+            - list [ref=f8e106]:
+              - listitem [ref=f8e107]:
+                - generic [ref=f8e110]:
+                  - paragraph [ref=f8e111]: Proof of identity
+                  - paragraph [ref=f8e112]: U.S. passport, birth certificate, or permanent resident card.
+              - listitem [ref=f8e113]:
+                - generic [ref=f8e116]:
+                  - paragraph [ref=f8e117]: Proof of residency
+                  - paragraph [ref=f8e118]: Utility bill, rental agreement, or bank statement.
+              - listitem [ref=f8e119]:
+                - generic [ref=f8e122]:
+                  - paragraph [ref=f8e123]: Application fee
+                  - paragraph [ref=f8e124]: Paid online at the end of your application.
+          - generic [ref=f8e125]:
+            - heading "Your application" [level=2] [ref=f8e126]
+            - generic [ref=f8e130]:
+              - generic [ref=f8e131]:
+                - term [ref=f8e132]: Status
+                - definition [ref=f8e133]: Draft
+              - generic [ref=f8e134]:
+                - term [ref=f8e135]: License class
+                - definition [ref=f8e136]: —
+              - generic [ref=f8e137]:
+                - term [ref=f8e138]: REAL ID
+                - definition [ref=f8e139]: —
+              - generic [ref=f8e140]:
+                - term [ref=f8e141]: Started
+                - definition [ref=f8e142]: Just now
+            - paragraph [ref=f8e143]: Your progress updates automatically as you chat with the assistant.
+  - contentinfo [ref=f8e144]:
+    - generic [ref=f8e146]:
+      - generic [ref=f8e147]:
+        - img "Department of Motor Vehicles logo" [ref=f8e148]
+        - generic [ref=f8e158]: Department of Motor Vehicles
+      - paragraph [ref=f8e159]: The Department of Motor Vehicles serves residents with driver licensing, identification, and vehicle services. This portal is a demonstration built on the Salesforce platform.
+      - navigation [ref=f8e160]:
+        - generic [ref=f8e161]: Home
+        - generic [ref=f8e162]: Renew DL/ID
+        - generic [ref=f8e163]: REAL ID
+        - generic [ref=f8e164]: Appointments
+        - generic [ref=f8e165]: Privacy
+        - generic [ref=f8e166]: Accessibility
+        - generic [ref=f8e167]: Contact us
+      - paragraph [ref=f8e168]: © 2026 Department of Motor Vehicles (demonstration)

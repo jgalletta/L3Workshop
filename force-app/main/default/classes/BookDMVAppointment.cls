@@ -16,7 +16,9 @@ public without sharing class BookDMVAppointment {
     };
 
     public class Request {
-        @InvocableVariable(label='Contact Id' description='Contact the appointment is for.' required=true)
+        @InvocableVariable(label='Application Id' description='Application the appointment is for.' required=true)
+        public String applicationId;
+        @InvocableVariable(label='Contact Id' description='Contact the appointment is for, if known.')
         public String contactId;
         @InvocableVariable(label='Office Id' description='Chosen DMV office id.' required=true)
         public String officeId;
@@ -76,6 +78,7 @@ public without sharing class BookDMVAppointment {
 
             DateTime slot = nextBusinessDaySlot(SLOT_HOUR.get(slotLabel));
             DMV_Appointment__c appt = new DMV_Appointment__c(
+                Application__c = req.applicationId,
                 Contact__c = req.contactId,
                 Appointment_DateTime__c = slot,
                 Time_Slot__c = slotLabel,
@@ -105,10 +108,18 @@ public without sharing class BookDMVAppointment {
 
         // Map results back (query names for the inserted records).
         Map<Id, DMV_Appointment__c> byId = new Map<Id, DMV_Appointment__c>();
+        Set<Id> appIds = new Set<Id>();
         if (!valid.isEmpty()) {
-            for (DMV_Appointment__c a : [SELECT Id, Name, Appointment_DateTime__c FROM DMV_Appointment__c WHERE Id IN :valid]) {
+            for (DMV_Appointment__c a : [SELECT Id, Name, Appointment_DateTime__c, Application__c FROM DMV_Appointment__c WHERE Id IN :valid]) {
                 byId.put(a.Id, a);
+                if (a.Application__c != null) appIds.add(a.Application__c);
             }
+        }
+        // Advance the linked Applications to Scheduled.
+        if (!appIds.isEmpty()) {
+            List<Application__c> apps = new List<Application__c>();
+            for (Id appId : appIds) apps.add(new Application__c(Id = appId, Status__c = 'Scheduled'));
+            update apps;
         }
         for (Integer i = 0; i < requests.size(); i++) {
             Result res = perReq.get(i);

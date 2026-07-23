@@ -1,0 +1,91 @@
+{
+  "required" : [ "applicationId", "officeId", "serviceType", "timeSlot" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "applicationId" : {
+      "title" : "Application Id",
+      "description" : "The application this appointment belongs to.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "congestionStatus" : {
+      "title" : "Congestion Status",
+      "description" : "Congestion Status",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "estimatedTravelMinutes" : {
+      "title" : "Estimated Travel Minutes",
+      "description" : "Estimated Travel Minutes",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "expectedWaitMinutes" : {
+      "title" : "Expected Wait Minutes",
+      "description" : "Expected Wait Minutes",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "officeCity" : {
+      "title" : "Office City",
+      "description" : "Office City",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "officeId" : {
+      "title" : "Office Id",
+      "description" : "Office Id",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "officeLatitude" : {
+      "title" : "Office Latitude",
+      "description" : "Office Latitude",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "officeLongitude" : {
+      "title" : "Office Longitude",
+      "description" : "Office Longitude",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "officeName" : {
+      "title" : "Office Name",
+      "description" : "Office Name",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "officeRegion" : {
+      "title" : "Office Region",
+      "description" : "Office Region",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "serviceType" : {
+      "title" : "Service Type",
+      "description" : "Service Type",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "timeSlot" : {
+      "title" : "Time Slot",
+      "description" : "Time Slot",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

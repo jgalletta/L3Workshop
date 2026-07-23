@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Upload Your Documents" icon-name="doctype:image">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <template lwc:if={error}>
+                <div class="slds-text-color_error slds-m-bottom_small">{error}</div>
+            </template>
+
+            <template lwc:if={ready}>
+                <p class="slds-text-body_regular slds-m-bottom_small">
+                    Upload your form of identification and your proof of address, then start the chat
+                    and let the assistant know you're ready.
+                </p>
+
+                <div class="slds-m-bottom_small">
+                    <lightning-file-upload
+                        label="Form of Identification"
+                        name="idUpload"
+                        accept={acceptedFormats}
+                        record-id={applicationId}
+                        onuploadfinished={handleIdUpload}>
+                    </lightning-file-upload>
+                    <template lwc:if={idUploaded}>
+                        <lightning-icon icon-name="utility:check" size="x-small" variant="success"></lightning-icon>
+                        <span class="slds-text-color_success slds-m-left_xx-small">ID uploaded</span>
+                    </template>
+                </div>
+
+                <div class="slds-m-bottom_small">
+                    <lightning-file-upload
+                        label="Proof of Address"
+                        name="addressUpload"
+                        accept={acceptedFormats}
+                        record-id={applicationId}
+                        onuploadfinished={handleAddressUpload}>
+                    </lightning-file-upload>
+                    <template lwc:if={addressUploaded}>
+                        <lightning-icon icon-name="utility:check" size="x-small" variant="success"></lightning-icon>
+                        <span class="slds-text-color_success slds-m-left_xx-small">Proof of address uploaded</span>
+                    </template>
+                </div>
+
+                <template lwc:if={bothUploaded}>
+                    <div class="slds-box slds-box_xx-small slds-theme_success slds-m-top_small">
+                        Both documents received. Head to the chat and say you've uploaded your documents.
+                    </div>
+                </template>
+            </template>
+
+            <template lwc:if={ready}></template>
+            <template lwc:else>
+                <lightning-spinner alternative-text="Preparing upload..." size="small"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>
