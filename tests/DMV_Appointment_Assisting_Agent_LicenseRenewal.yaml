@@ -1,0 +1,15 @@
+name: DMV_Appointment_Assisting_Agent_LicenseRenewal
+subjectType: AGENT
+subjectName: DMV_Appointment_Assisting_Agent
+
+# Single test case for the current agent flow (v32).
+# A driver-license-renewal request routes to the document_collection subagent,
+# which starts an application and asks the user to attach their identity and
+# proof-of-address documents before any scheduling happens.
+
+testCases:
+  - utterance: "I need to renew my driver's license"
+    expectedTopic: document_collection
+    expectedActions:
+      - create_application
+    expectedOutcome: "Agent recognizes the driver license renewal request, starts a new application, and asks the user to attach their identification and proof of address (as PNG files via the attachment button), before moving on to scheduling."
